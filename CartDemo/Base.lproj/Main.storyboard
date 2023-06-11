@@ -1042,6 +1042,12 @@
                                                                 <constraint firstAttribute="trailing" secondItem="dS6-Jj-V5d" secondAttribute="trailing" id="ynK-Sl-mvb"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="visualCartProductImage" destination="EKz-93-LsN" id="reK-H1-NBQ"/>
+                                                            <outlet property="visualCartProductName" destination="Fc5-U7-Toi" id="HVd-4M-Uc1"/>
+                                                            <outlet property="visualCartProductPrice" destination="vZO-OY-xVE" id="1zI-nA-gwF"/>
+                                                            <outlet property="visualCartProductQty" destination="tFQ-06-ZSZ" id="oee-ad-Tm4"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <connections>
@@ -1102,6 +1108,9 @@
                                                     </attributedString>
                                                     <color key="baseBackgroundColor" red="0.43921568989999998" green="0.30196079609999998" blue="0.1176470518" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="visualCheckout:" destination="zJl-Vw-6Oj" eventType="touchUpInside" id="dP9-dT-Aeo"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -1129,6 +1138,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cart" image="cart.fill" catalog="system" id="mJW-hS-xJy"/>
+                    <connections>
+                        <outlet property="visualCartProductTotal" destination="vuw-s7-BK0" id="11c-qS-Fhl"/>
+                        <outlet property="visualCartTableView" destination="DMY-Ha-w78" id="djf-qI-WCm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rdp-Kx-R6c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

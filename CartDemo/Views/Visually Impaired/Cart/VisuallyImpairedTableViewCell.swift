@@ -9,6 +9,12 @@ import UIKit
 
 class VisuallyImpairedTableViewCell: UITableViewCell {
 
+    // MARK: Outlets
+    @IBOutlet weak var visualCartProductName: UILabel!
+    @IBOutlet weak var visualCartProductPrice: UILabel!
+    @IBOutlet weak var visualCartProductQty: UILabel!
+    @IBOutlet weak var visualCartProductImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
