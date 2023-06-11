@@ -8,13 +8,15 @@
 import UIKit
 import SQLite3
 
+//MARK: MODIFIED --------
+var totalPriceInCart: Double = 0        // dont delete this is for total
+
 class RegularCartTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: Variables
     // object that will hold all the data
     var cartProduct = [CartProductHolder]() // dont delete this is for showing all the products in cart
     var selectedCartProductID: Int = 0      // dont delete this is for delete function
-    var totalPriceInCart: Double = 0        // dont delete this is for total
     
     @IBOutlet weak var regularCartTableView: UITableView!
     @IBOutlet weak var cartProductTotal: UILabel!
@@ -50,40 +52,21 @@ class RegularCartTableViewController: UIViewController, UITableViewDataSource, U
             showMessage(message: "Cannot checkout with empty cart.", buttonCaption: "Please put products in cart", controller: self)
         }
         else{
-            let referenceNum = Int(arc4random_uniform(6) + 1)
-            
-            showMessage(message: "Your reference number is \(referenceNum). To pay: \(totalPriceInCart)", buttonCaption: "Close", controller: self)
-            
-            // =====================DELETE CART, CARTPRODUCT=====================
-            let deleteCartProduct = sqlite3_exec(dbQueue, "DELETE FROM CartProduct", nil, nil, nil)
-    
-            if(deleteCartProduct != SQLITE_OK){
-                print("[LoginViewController.swift>deleteCartProduct] Cannot delete CartProduct data 🙁")
+            //MARK: MODIFIED --------
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "ApplePay") as? ApplePayViewController{
+                //present the ApplePayViewController as a bottomsheet
+                if let sheet = vc.sheetPresentationController {
+                    //sets the height on how much you can extend it
+                    sheet.detents = [.medium(), .medium()]
+                    //size will remain and will not expand
+                    sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+                    sheet.preferredCornerRadius = 24
+                    //horizontal line on the top
+                    sheet.prefersGrabberVisible = true
+                }
+                //present the ViewController
+                self.navigationController?.present(vc, animated: true)
             }
-            else{
-                print("[LoginViewController.swift>deleteCartProduct] CartProduct data deleted 🥳")
-            }
-            // =====================DELETE CART, CARTPRODUCT=====================
-            
-            // =====================UPDATE CART, CARTPRODUCT=====================
-            let addFinalTotal = sqlite3_exec(dbQueue, "UPDATE Cart SET cartTotalPrice = \(totalPriceInCart) WHERE cartID = \(currentCartID)", nil, nil, nil)
-            if(addFinalTotal != SQLITE_OK){
-                print("[LoginViewController.swift>addFinalTotal] Cannot add cartTotalPrice in Cart Table 🙁")
-            }
-            else{
-                print("[LoginViewController.swift>addFinalTotal] Added cartTotalPrice in Cart Table 🥳")
-            }
-            
-            let updateCheckOutStatus = sqlite3_exec(dbQueue, "UPDATE Cart SET isCheckedOut = 'true'", nil, nil, nil)
-            
-            if(updateCheckOutStatus != SQLITE_OK){
-                print("[LoginViewController.swift>updateCheckOutStatus] Cannot update CartProduct checkout status 🙁")
-            }
-            else{
-                print("[LoginViewController.swift>updateCheckOutStatus] Updated CartProduct checkout status 🥳")
-            }
-            // =====================UPDATE CART, CARTPRODUCT=====================
-            
             cartProduct.removeAll()                 // removes all the object
             regularCartTableView.reloadData()
             cartProductTotal.text = "$0.0"

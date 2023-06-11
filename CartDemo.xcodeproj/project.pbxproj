@@ -47,6 +47,7 @@
 		3FFF479C2A35907F00F5A52D /* VisualWishProductHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF479B2A35907F00F5A52D /* VisualWishProductHolder.swift */; };
 		3FFF479E2A3590CB00F5A52D /* VisualCartProductHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF479D2A3590CB00F5A52D /* VisualCartProductHolder.swift */; };
 		3FFF47A02A35912000F5A52D /* VisualProductHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF479F2A35912000F5A52D /* VisualProductHolder.swift */; };
+		3FFF47A22A35E95900F5A52D /* ApplePayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF47A12A35E95900F5A52D /* ApplePayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		3FFF479B2A35907F00F5A52D /* VisualWishProductHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualWishProductHolder.swift; sourceTree = "<group>"; };
 		3FFF479D2A3590CB00F5A52D /* VisualCartProductHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualCartProductHolder.swift; sourceTree = "<group>"; };
 		3FFF479F2A35912000F5A52D /* VisualProductHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualProductHolder.swift; sourceTree = "<group>"; };
+		3FFF47A12A35E95900F5A52D /* ApplePayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 			children = (
 				3FB883472A2057C900B55BD2 /* RegularCartTableViewController.swift */,
 				3FB883492A2057E100B55BD2 /* RegularCartTableViewCell.swift */,
+				3FFF47A12A35E95900F5A52D /* ApplePayViewController.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				3FBA966A2A27928E00030CD0 /* WishListTableViewCell.swift in Sources */,
 				3FA04D122A3360CD000D53B7 /* AddProductViewController.swift in Sources */,
 				3FFF479E2A3590CB00F5A52D /* VisualCartProductHolder.swift in Sources */,
+				3FFF47A22A35E95900F5A52D /* ApplePayViewController.swift in Sources */,
 				3FB883482A2057C900B55BD2 /* RegularCartTableViewController.swift in Sources */,
 				3FBA96682A27928100030CD0 /* WishListViewController.swift in Sources */,
 				3FB883342A20562200B55BD2 /* ProductHolder.swift in Sources */,

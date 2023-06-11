@@ -9,6 +9,7 @@ import UIKit
 import SQLite3
 
 var currentUserLoggedInID: Int32 = 0        // don't remove: for cart table
+var userEmail: String = ""
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -59,6 +60,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     // =================================FOR TESTING=================================
                     
                     if(loginEmail == String(cString: sqlite3_column_text(selectStatementQuery, 1)) && loginPass == String(cString: sqlite3_column_text(selectStatementQuery, 2))){
+                        
+                        //MARK: MODIFIED --------
+                        //stores the email and pass for the ApplePayViewController
+                        userEmail = String(cString: sqlite3_column_text(selectStatementQuery, 1))
+                        
                         // ==========================FOR TESTING==========================
                         print("===================")
                         print("===================")
