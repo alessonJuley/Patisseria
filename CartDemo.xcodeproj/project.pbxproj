@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F01FDFD2A35F28B003D336D /* VisuallyImpairedApplePayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F01FDFC2A35F28B003D336D /* VisuallyImpairedApplePayViewController.swift */; };
 		3F708A202A210A930093A343 /* CartProductHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F708A1F2A210A930093A343 /* CartProductHolder.swift */; };
 		3FA04D072A335C93000D53B7 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA04D062A335C93000D53B7 /* OnboardingSlide.swift */; };
 		3FA04D0A2A335CD1000D53B7 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA04D092A335CD1000D53B7 /* OnboardingViewController.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F01FDFC2A35F28B003D336D /* VisuallyImpairedApplePayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisuallyImpairedApplePayViewController.swift; sourceTree = "<group>"; };
 		3F708A1F2A210A930093A343 /* CartProductHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProductHolder.swift; sourceTree = "<group>"; };
 		3FA04D062A335C93000D53B7 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		3FA04D092A335CD1000D53B7 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				3FFF47922A358FF200F5A52D /* VisuallyImpairedCartTableViewController.swift */,
 				3FFF47942A35900100F5A52D /* VisuallyImpairedTableViewCell.swift */,
+				3F01FDFC2A35F28B003D336D /* VisuallyImpairedApplePayViewController.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				3FFF47972A35901B00F5A52D /* VisuallyImpairedProfileViewController.swift in Sources */,
 				3FFF478B2A358F8F00F5A52D /* VisuallyImpairedHomeProductDetailsViewController.swift in Sources */,
 				3FA04D142A3360F0000D53B7 /* UpdateProductViewController.swift in Sources */,
+				3F01FDFD2A35F28B003D336D /* VisuallyImpairedApplePayViewController.swift in Sources */,
 				3FA04D0A2A335CD1000D53B7 /* OnboardingViewController.swift in Sources */,
 				3FA04D1C2A34BC94000D53B7 /* WishListDetailViewController.swift in Sources */,
 				3FA04D0E2A336064000D53B7 /* ProductListTableViewController.swift in Sources */,
