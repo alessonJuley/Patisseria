@@ -1412,7 +1412,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAU-8y-Pc0">
-                                                        <rect key="frame" x="0.0" y="104.5" width="384" height="136.5"/>
+                                                        <rect key="frame" x="0.0" y="104.5" width="384" height="137"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1744,6 +1744,9 @@
                                                     </attributedString>
                                                     <color key="baseBackgroundColor" red="0.43921568989999998" green="0.30196079609999998" blue="0.1176470518" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="visualLogoutButton:" destination="6NY-AD-x8g" eventType="touchUpInside" id="M30-5k-5eP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -1770,6 +1773,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="2Xj-eW-ZhB"/>
+                    <connections>
+                        <outlet property="visualProfileEmail" destination="X37-8f-RFR" id="tHq-1k-4eS"/>
+                        <outlet property="visualProfileFirstName" destination="6kj-EA-tBB" id="U8f-vu-DMj"/>
+                        <outlet property="visualProfileLastName" destination="I3G-pS-AHF" id="E3M-wF-0Pw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtB-lE-dAt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
