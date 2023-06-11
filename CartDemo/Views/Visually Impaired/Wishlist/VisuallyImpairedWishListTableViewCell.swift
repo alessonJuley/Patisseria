@@ -9,6 +9,12 @@ import UIKit
 
 class VisuallyImpairedWishListTableViewCell: UITableViewCell {
 
+    // MARK: Outlets
+    @IBOutlet weak var visualWishProductName: UILabel!
+    @IBOutlet weak var visualWishProductPrice: UILabel!
+    @IBOutlet weak var visualWishProductCategory: UILabel!
+    @IBOutlet weak var visualWishProductImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
