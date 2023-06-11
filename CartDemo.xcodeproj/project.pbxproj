@@ -35,6 +35,18 @@
 		3FBA96662A278D0D00030CD0 /* WishProductHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBA96652A278D0D00030CD0 /* WishProductHolder.swift */; };
 		3FBA96682A27928100030CD0 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBA96672A27928100030CD0 /* WishListViewController.swift */; };
 		3FBA966A2A27928E00030CD0 /* WishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBA96692A27928E00030CD0 /* WishListTableViewCell.swift */; };
+		3FFF47872A358F2900F5A52D /* VisuallyImpairedHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF47862A358F2900F5A52D /* VisuallyImpairedHomeViewController.swift */; };
+		3FFF47892A358F6500F5A52D /* VisuallyImpairedHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF47882A358F6500F5A52D /* VisuallyImpairedHomeTableViewCell.swift */; };
+		3FFF478B2A358F8F00F5A52D /* VisuallyImpairedHomeProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF478A2A358F8F00F5A52D /* VisuallyImpairedHomeProductDetailsViewController.swift */; };
+		3FFF478D2A358FAB00F5A52D /* VisuallyImpairedWishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF478C2A358FAB00F5A52D /* VisuallyImpairedWishListViewController.swift */; };
+		3FFF478F2A358FC000F5A52D /* VisuallyImpairedWishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF478E2A358FC000F5A52D /* VisuallyImpairedWishListTableViewCell.swift */; };
+		3FFF47912A358FD700F5A52D /* VisuallyImpairedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF47902A358FD700F5A52D /* VisuallyImpairedDetailViewController.swift */; };
+		3FFF47932A358FF200F5A52D /* VisuallyImpairedCartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF47922A358FF200F5A52D /* VisuallyImpairedCartTableViewController.swift */; };
+		3FFF47952A35900100F5A52D /* VisuallyImpairedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF47942A35900100F5A52D /* VisuallyImpairedTableViewCell.swift */; };
+		3FFF47972A35901B00F5A52D /* VisuallyImpairedProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF47962A35901B00F5A52D /* VisuallyImpairedProfileViewController.swift */; };
+		3FFF479C2A35907F00F5A52D /* VisualWishProductHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF479B2A35907F00F5A52D /* VisualWishProductHolder.swift */; };
+		3FFF479E2A3590CB00F5A52D /* VisualCartProductHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF479D2A3590CB00F5A52D /* VisualCartProductHolder.swift */; };
+		3FFF47A02A35912000F5A52D /* VisualProductHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF479F2A35912000F5A52D /* VisualProductHolder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +80,18 @@
 		3FBA96652A278D0D00030CD0 /* WishProductHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishProductHolder.swift; sourceTree = "<group>"; };
 		3FBA96672A27928100030CD0 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		3FBA96692A27928E00030CD0 /* WishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTableViewCell.swift; sourceTree = "<group>"; };
+		3FFF47862A358F2900F5A52D /* VisuallyImpairedHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisuallyImpairedHomeViewController.swift; sourceTree = "<group>"; };
+		3FFF47882A358F6500F5A52D /* VisuallyImpairedHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisuallyImpairedHomeTableViewCell.swift; sourceTree = "<group>"; };
+		3FFF478A2A358F8F00F5A52D /* VisuallyImpairedHomeProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisuallyImpairedHomeProductDetailsViewController.swift; sourceTree = "<group>"; };
+		3FFF478C2A358FAB00F5A52D /* VisuallyImpairedWishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisuallyImpairedWishListViewController.swift; sourceTree = "<group>"; };
+		3FFF478E2A358FC000F5A52D /* VisuallyImpairedWishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisuallyImpairedWishListTableViewCell.swift; sourceTree = "<group>"; };
+		3FFF47902A358FD700F5A52D /* VisuallyImpairedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisuallyImpairedDetailViewController.swift; sourceTree = "<group>"; };
+		3FFF47922A358FF200F5A52D /* VisuallyImpairedCartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisuallyImpairedCartTableViewController.swift; sourceTree = "<group>"; };
+		3FFF47942A35900100F5A52D /* VisuallyImpairedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisuallyImpairedTableViewCell.swift; sourceTree = "<group>"; };
+		3FFF47962A35901B00F5A52D /* VisuallyImpairedProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisuallyImpairedProfileViewController.swift; sourceTree = "<group>"; };
+		3FFF479B2A35907F00F5A52D /* VisualWishProductHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualWishProductHolder.swift; sourceTree = "<group>"; };
+		3FFF479D2A3590CB00F5A52D /* VisualCartProductHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualCartProductHolder.swift; sourceTree = "<group>"; };
+		3FFF479F2A35912000F5A52D /* VisualProductHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualProductHolder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,11 +148,9 @@
 		3FB8832E2A20559400B55BD2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3FB883332A20562200B55BD2 /* ProductHolder.swift */,
-				3F708A1F2A210A930093A343 /* CartProductHolder.swift */,
-				3FBA96652A278D0D00030CD0 /* WishProductHolder.swift */,
-				3FA04D062A335C93000D53B7 /* OnboardingSlide.swift */,
-				3FA04D192A34B297000D53B7 /* CustomTabBarController.swift */,
+				3FFF479A2A35906100F5A52D /* VisuallyImpaired */,
+				3FFF47992A35903E00F5A52D /* Frontend */,
+				3FFF47982A35902500F5A52D /* Regular */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,6 +205,9 @@
 		3FB883392A2056F300B55BD2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3FFF47862A358F2900F5A52D /* VisuallyImpairedHomeViewController.swift */,
+				3FFF47882A358F6500F5A52D /* VisuallyImpairedHomeTableViewCell.swift */,
+				3FFF478A2A358F8F00F5A52D /* VisuallyImpairedHomeProductDetailsViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -190,6 +215,9 @@
 		3FB8833A2A2056F900B55BD2 /* Wishlist */ = {
 			isa = PBXGroup;
 			children = (
+				3FFF478C2A358FAB00F5A52D /* VisuallyImpairedWishListViewController.swift */,
+				3FFF478E2A358FC000F5A52D /* VisuallyImpairedWishListTableViewCell.swift */,
+				3FFF47902A358FD700F5A52D /* VisuallyImpairedDetailViewController.swift */,
 			);
 			path = Wishlist;
 			sourceTree = "<group>";
@@ -197,6 +225,8 @@
 		3FB8833B2A20570300B55BD2 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				3FFF47922A358FF200F5A52D /* VisuallyImpairedCartTableViewController.swift */,
+				3FFF47942A35900100F5A52D /* VisuallyImpairedTableViewCell.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -204,6 +234,7 @@
 		3FB8833C2A20570900B55BD2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				3FFF47962A35901B00F5A52D /* VisuallyImpairedProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -243,6 +274,35 @@
 				3FA04D172A3374E4000D53B7 /* RegularProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		3FFF47982A35902500F5A52D /* Regular */ = {
+			isa = PBXGroup;
+			children = (
+				3FBA96652A278D0D00030CD0 /* WishProductHolder.swift */,
+				3F708A1F2A210A930093A343 /* CartProductHolder.swift */,
+				3FB883332A20562200B55BD2 /* ProductHolder.swift */,
+			);
+			path = Regular;
+			sourceTree = "<group>";
+		};
+		3FFF47992A35903E00F5A52D /* Frontend */ = {
+			isa = PBXGroup;
+			children = (
+				3FA04D192A34B297000D53B7 /* CustomTabBarController.swift */,
+				3FA04D062A335C93000D53B7 /* OnboardingSlide.swift */,
+			);
+			path = Frontend;
+			sourceTree = "<group>";
+		};
+		3FFF479A2A35906100F5A52D /* VisuallyImpaired */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF479B2A35907F00F5A52D /* VisualWishProductHolder.swift */,
+				3FFF479D2A3590CB00F5A52D /* VisualCartProductHolder.swift */,
+				3FFF479F2A35912000F5A52D /* VisualProductHolder.swift */,
+			);
+			path = VisuallyImpaired;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,26 +381,38 @@
 				3FA04D1A2A34B297000D53B7 /* CustomTabBarController.swift in Sources */,
 				3FBA966A2A27928E00030CD0 /* WishListTableViewCell.swift in Sources */,
 				3FA04D122A3360CD000D53B7 /* AddProductViewController.swift in Sources */,
+				3FFF479E2A3590CB00F5A52D /* VisualCartProductHolder.swift in Sources */,
 				3FB883482A2057C900B55BD2 /* RegularCartTableViewController.swift in Sources */,
 				3FBA96682A27928100030CD0 /* WishListViewController.swift in Sources */,
 				3FB883342A20562200B55BD2 /* ProductHolder.swift in Sources */,
+				3FFF47972A35901B00F5A52D /* VisuallyImpairedProfileViewController.swift in Sources */,
+				3FFF478B2A358F8F00F5A52D /* VisuallyImpairedHomeProductDetailsViewController.swift in Sources */,
 				3FA04D142A3360F0000D53B7 /* UpdateProductViewController.swift in Sources */,
 				3FA04D0A2A335CD1000D53B7 /* OnboardingViewController.swift in Sources */,
 				3FA04D1C2A34BC94000D53B7 /* WishListDetailViewController.swift in Sources */,
 				3FA04D0E2A336064000D53B7 /* ProductListTableViewController.swift in Sources */,
+				3FFF47892A358F6500F5A52D /* VisuallyImpairedHomeTableViewCell.swift in Sources */,
 				3FBA96662A278D0D00030CD0 /* WishProductHolder.swift in Sources */,
+				3FFF47872A358F2900F5A52D /* VisuallyImpairedHomeViewController.swift in Sources */,
 				3FA04D162A336A8D000D53B7 /* AdminLandingViewController.swift in Sources */,
 				3FB8831B2A20555F00B55BD2 /* AppDelegate.swift in Sources */,
 				3FA04D0C2A335CFA000D53B7 /* OnboardingCollectionViewCell.swift in Sources */,
 				3FB883382A20569200B55BD2 /* RegisterViewController.swift in Sources */,
+				3FFF478F2A358FC000F5A52D /* VisuallyImpairedWishListTableViewCell.swift in Sources */,
 				3FB883422A20574B00B55BD2 /* RegularHomeTableViewController.swift in Sources */,
 				3FB883462A20579500B55BD2 /* RegularHomeTableViewCell.swift in Sources */,
 				3FB883442A20577800B55BD2 /* RegularHomeProductDetailViewController.swift in Sources */,
+				3FFF479C2A35907F00F5A52D /* VisualWishProductHolder.swift in Sources */,
+				3FFF478D2A358FAB00F5A52D /* VisuallyImpairedWishListViewController.swift in Sources */,
 				3F708A202A210A930093A343 /* CartProductHolder.swift in Sources */,
 				3FB8834A2A2057E100B55BD2 /* RegularCartTableViewCell.swift in Sources */,
 				3FB883362A20565600B55BD2 /* LoginViewController.swift in Sources */,
 				3FA04D072A335C93000D53B7 /* OnboardingSlide.swift in Sources */,
+				3FFF47A02A35912000F5A52D /* VisualProductHolder.swift in Sources */,
+				3FFF47952A35900100F5A52D /* VisuallyImpairedTableViewCell.swift in Sources */,
+				3FFF47932A358FF200F5A52D /* VisuallyImpairedCartTableViewController.swift in Sources */,
 				3FB8831D2A20555F00B55BD2 /* SceneDelegate.swift in Sources */,
+				3FFF47912A358FD700F5A52D /* VisuallyImpairedDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

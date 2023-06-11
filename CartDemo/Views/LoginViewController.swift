@@ -129,14 +129,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             // Hide the back button in the regular view controller
                             navigationController?.setNavigationBarHidden(true, animated: false)
                         }
-//                        else if String(cString: sqlite3_column_text(selectStatementQuery, 3)) == "Yes"{
-//                            // User is an admin, navigate to admin view controller
-//                            let visuallyImpairedViewController = storyboard?.instantiateViewController(withIdentifier: "VisualImpairedViewController") as! VisuallyImpairedHomeViewController
-//                            navigationController?.pushViewController(visuallyImpairedViewController, animated: true)
-//
-//                            // Hide the back button in the regular view controller
-//                            navigationController?.setNavigationBarHidden(true, animated: false)
-//                        }
+                        else if String(cString: sqlite3_column_text(selectStatementQuery, 3)) == "Yes"{
+                            currentUserLoggedInID += Int32(Int(sqlite3_column_int(selectStatementQuery, 0)))
+                            
+                            // User is an admin, navigate to admin view controller
+                            let visuallyImpairedViewController = self.storyboard?.instantiateViewController(withIdentifier: "VisualImpairedViewController")
+                            self.navigationController?.pushViewController(visuallyImpairedViewController!, animated: true)
+
+                            // Hide the back button in the regular view controller
+                            navigationController?.setNavigationBarHidden(true, animated: false)
+                        }
                         else if String(cString: sqlite3_column_text(selectStatementQuery, 3)) == "No"{
                             
                             currentUserLoggedInID += Int32(Int(sqlite3_column_int(selectStatementQuery, 0)))
