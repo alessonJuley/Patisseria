@@ -20,6 +20,7 @@ class RegularCartTableViewController: UIViewController, UITableViewDataSource, U
     // object that will hold all the data
     var cartProduct = [CartProductHolder]() // dont delete this is for showing all the products in cart
     var selectedCartProductID: Int = 0      // dont delete this is for delete function
+    let braintreeClient = BTAPIClient(authorization: "sandbox_bnq4zk5x_j42yvqb3fdx5n6ny")
     
     @IBOutlet weak var regularCartTableView: UITableView!
     @IBOutlet weak var cartProductTotal: UILabel!
@@ -87,21 +88,21 @@ class RegularCartTableViewController: UIViewController, UITableViewDataSource, U
                 if result.isCanceled {
                     print("Payment Cancelled")
                 } else if (result.paymentMethod?.nonce) != nil {
-                    // Payment succeeded, post the payment method nonce to your server
+                    // Payment succeeded, post the payment method nonce to server
                     if let paymentMethodNonce = result.paymentMethod?.nonce {
                         // Retrieve the payment amount
                         let paymentAmount = totalPriceInCart
                         
-                        // Post the payment method nonce and amount to your server
+                        // Post the payment method nonce and amount to server
                         postNonceToServer(paymentMethodNonce: paymentMethodNonce, amount: paymentAmount)
                     }
                 }
                 
-//                let paymentMethodType = result.paymentMethodType
-//                let paymentMethod = result.paymentMethod
-//                let paymentDescription = result.paymentDescription
-//                
-               
+                //                let paymentMethodType = result.paymentMethodType
+                //                let paymentMethod = result.paymentMethod
+                //                let paymentDescription = result.paymentDescription
+                //
+                
             }
             controller.dismiss(animated: true, completion: nil)
         }
@@ -133,15 +134,15 @@ class RegularCartTableViewController: UIViewController, UITableViewDataSource, U
             }
             
             if let response = response as? HTTPURLResponse {
-//                if response.statusCode == 200 {
-//                    print("Payment success")
-//                } else {
-//                    //print("Payment failed in URL. Status code: \(response.statusCode)")
-//                }
+                //                if response.statusCode == 200 {
+                //                    print("Payment success")
+                //                } else {
+                //                    //print("Payment failed in URL. Status code: \(response.statusCode)")
+                //                }
                 let referenceNum = Int(arc4random_uniform(6) + 1)
                 DispatchQueue.main.async {
                     showMessage(message: "Your reference number is \(referenceNum). To pay: $ \(totalPriceInCart). Complete Paypal integration will be integrated in the future.", buttonCaption: "Close", controller: self!)
-                   
+                    
                 }
             }
         }.resume()
