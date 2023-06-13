@@ -8,6 +8,7 @@
 import UIKit
 // =====================ADDED FOR SQLITE=====================
 import SQLite3
+import Braintree
 
 var dbQueue: OpaquePointer!
 // db will be within the iOS device
@@ -17,6 +18,11 @@ var dbURL = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainM
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //FOR PAYPAL
+        //Bundle Identifier/URL Scheme
+        BTAppContextSwitcher.setReturnURLScheme("Manukau-Institute-of-Technology.CartDemo.payments")
+        
+        
         // =====================ADDED FOR SQLITE=====================
         // create and open db + set the pointer so it ends up finding db
         dbQueue = createAndOpenDb()

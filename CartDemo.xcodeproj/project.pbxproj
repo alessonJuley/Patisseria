@@ -49,9 +49,13 @@
 		3FFF479E2A3590CB00F5A52D /* VisualCartProductHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF479D2A3590CB00F5A52D /* VisualCartProductHolder.swift */; };
 		3FFF47A02A35912000F5A52D /* VisualProductHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF479F2A35912000F5A52D /* VisualProductHolder.swift */; };
 		3FFF47A22A35E95900F5A52D /* ApplePayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF47A12A35E95900F5A52D /* ApplePayViewController.swift */; };
+		EA334C9A53A2FF8CF31264A7 /* Pods_CartDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D414FCE52D0FB021438879E /* Pods_CartDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06052B9A4645B731AE8EDEC4 /* Pods-CartDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CartDemo.release.xcconfig"; path = "Target Support Files/Pods-CartDemo/Pods-CartDemo.release.xcconfig"; sourceTree = "<group>"; };
+		0D414FCE52D0FB021438879E /* Pods_CartDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CartDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AD99DB004A45CF860742B77 /* Pods-CartDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CartDemo.debug.xcconfig"; path = "Target Support Files/Pods-CartDemo/Pods-CartDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		3F01FDFC2A35F28B003D336D /* VisuallyImpairedApplePayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisuallyImpairedApplePayViewController.swift; sourceTree = "<group>"; };
 		3F708A1F2A210A930093A343 /* CartProductHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProductHolder.swift; sourceTree = "<group>"; };
 		3FA04D062A335C93000D53B7 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA334C9A53A2FF8CF31264A7 /* Pods_CartDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +128,8 @@
 			children = (
 				3FB883192A20555F00B55BD2 /* CartDemo */,
 				3FB883182A20555F00B55BD2 /* Products */,
+				72725843AACFDA21CC3B023B /* Pods */,
+				CB7E20C3CA2A19BB8BA60C9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -311,6 +318,23 @@
 			path = VisuallyImpaired;
 			sourceTree = "<group>";
 		};
+		72725843AACFDA21CC3B023B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2AD99DB004A45CF860742B77 /* Pods-CartDemo.debug.xcconfig */,
+				06052B9A4645B731AE8EDEC4 /* Pods-CartDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CB7E20C3CA2A19BB8BA60C9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D414FCE52D0FB021438879E /* Pods_CartDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -318,9 +342,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3FB8832B2A20556000B55BD2 /* Build configuration list for PBXNativeTarget "CartDemo" */;
 			buildPhases = (
+				AAACA9A26478AD6B529F0AA8 /* [CP] Check Pods Manifest.lock */,
 				3FB883132A20555F00B55BD2 /* Sources */,
 				3FB883142A20555F00B55BD2 /* Frameworks */,
 				3FB883152A20555F00B55BD2 /* Resources */,
+				3DEFF9B0F10625E2FE171C78 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -376,6 +402,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DEFF9B0F10625E2FE171C78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CartDemo/Pods-CartDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CartDemo/Pods-CartDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CartDemo/Pods-CartDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAACA9A26478AD6B529F0AA8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CartDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3FB883132A20555F00B55BD2 /* Sources */ = {
@@ -562,6 +630,7 @@
 		};
 		3FB8832C2A20556000B55BD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AD99DB004A45CF860742B77 /* Pods-CartDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -593,6 +662,7 @@
 		};
 		3FB8832D2A20556000B55BD2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06052B9A4645B731AE8EDEC4 /* Pods-CartDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
