@@ -142,7 +142,6 @@ class RegularCartTableViewController: UIViewController, UITableViewDataSource, U
                 let referenceNum = Int(arc4random_uniform(6) + 1)
                 DispatchQueue.main.async {
                     showMessage(message: "Your reference number is \(referenceNum). To pay: $ \(totalPriceInCart). Complete Paypal integration will be integrated in the future.", buttonCaption: "Close", controller: self!)
-                    
                 }
             }
         }.resume()

@@ -7,15 +7,19 @@
 
 import UIKit
 import SQLite3
+import Braintree
+import BraintreeDropIn
 
-class VisuallyImpairedCartTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class VisuallyImpairedCartTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BTDropInControllerDelegate {
+    
     
     // MARK: Variables
     // object that will hold all the data
     var visualCartProduct = [VisualCartProductHolder]() // dont delete this is for showing all the products in cart
     var visualSelectedCartProductID: Int = 0      // dont delete this is for delete function
     var visualTotalPriceInCart: Double = 0        // dont delete this is for total
-
+    let braintreeClient = BTAPIClient(authorization: "sandbox_bnq4zk5x_j42yvqb3fdx5n6ny")
+    
     // MARK: Outlets
     @IBOutlet weak var visualCartTableView: UITableView!
     @IBOutlet weak var visualCartProductTotal: UILabel!
@@ -25,7 +29,7 @@ class VisuallyImpairedCartTableViewController: UIViewController, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -50,25 +54,82 @@ class VisuallyImpairedCartTableViewController: UIViewController, UITableViewData
             showMessage(message: "Cannot checkout with empty cart.", buttonCaption: "Please put products in cart", controller: self)
         }
         else{
-            //MARK: MODIFIED --------
-            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "VisualApplePay") as? VisuallyImpairedApplePayViewController{
-                //present the ApplePayViewController as a bottomsheet
-                if let sheet = vc.sheetPresentationController {
-                    //sets the height on how much you can extend it
-                    sheet.detents = [.medium(), .medium()]
-                    //size will remain and will not expand
-                    sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-                    sheet.preferredCornerRadius = 24
-                    //horizontal line on the top
-                    sheet.prefersGrabberVisible = true
-                }
-                //present the ViewController
-                self.navigationController?.present(vc, animated: true)
-            }
-            visualCartProduct.removeAll()                 // removes all the object
-            visualCartTableView.reloadData()
-            visualCartProductTotal.text = "$0.0"
+            paymentModal(clientTokenOrTokenizationKey: "sandbox_bnq4zk5x_j42yvqb3fdx5n6ny")
         }
+    }
+    
+    func paymentModal(clientTokenOrTokenizationKey: String) {
+        let request = BTDropInRequest()
+        let dropIn = BTDropInController(authorization: clientTokenOrTokenizationKey, request: request) { [weak self] (controller, result, error) in
+            guard let self = self else { return }
+            
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            } else if let result = result {
+                if result.isCanceled {
+                    print("Payment Cancelled")
+                } else if (result.paymentMethod?.nonce) != nil {
+                    // Payment succeeded, post the payment method nonce to server
+                    if let paymentMethodNonce = result.paymentMethod?.nonce {
+                        // Retrieve the payment amount
+                        let paymentAmount = totalPriceInCart
+                        
+                        // Post the payment method nonce and amount to server
+                        postNonceToServer(paymentMethodNonce: paymentMethodNonce, amount: paymentAmount)
+                    }
+                }
+                
+                //                let paymentMethodType = result.paymentMethodType
+                //                let paymentMethod = result.paymentMethod
+                //                let paymentDescription = result.paymentDescription
+                //
+                
+            }
+            controller.dismiss(animated: true, completion: nil)
+        }
+        self.present(dropIn!, animated: true)
+    }
+    
+    
+    func postNonceToServer(paymentMethodNonce: String, amount: Double) {
+        // Attempted server URL
+        let paymentURLString = "https://patisserie-new-zealand.glitch.me/process-payment"
+        
+        let requestBody = "payment_method_nonce=\(paymentMethodNonce)&amount=\(amount)"
+        
+        guard let paymentURL = URL(string: paymentURLString) else {
+            print("Invalid server URL")
+            return
+        }
+        
+        var request = URLRequest(url: paymentURL)
+        request.httpBody = requestBody.data(using: .utf8)
+        request.httpMethod = "POST"
+        
+        URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
+            guard self != nil else { return }
+            
+            if let error = error {
+                print("Error in URL: \(error.localizedDescription)")
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                //                if response.statusCode == 200 {
+                //                    print("Payment success")
+                //                } else {
+                //                    //print("Payment failed in URL. Status code: \(response.statusCode)")
+                //                }
+                let referenceNum = Int(arc4random_uniform(6) + 1)
+                DispatchQueue.main.async {
+                    showMessage(message: "Your reference number is \(referenceNum). To pay: $ \(self!.visualTotalPriceInCart). Complete Paypal integration will be integrated in the future.", buttonCaption: "Close", controller: self!)
+                }
+            }
+        }.resume()
+        // removes all the object
+        visualCartProduct.removeAll()
+        visualCartTableView.reloadData()
+        visualCartProductTotal.text = "$0.0"
     }
     
     // ********************************CLEAR CODE****************************************
@@ -92,7 +153,7 @@ class VisuallyImpairedCartTableViewController: UIViewController, UITableViewData
         let imgURL = URL(string: urlText!)
         // make URL request object to send over the network
         let urlRequest = URLRequest(url: imgURL!)
-
+        
         let task = URLSession.shared.dataTask(with: urlRequest)
         {
             (data,response,error)
@@ -102,7 +163,7 @@ class VisuallyImpairedCartTableViewController: UIViewController, UITableViewData
                 do{
                     let picData = try Data(contentsOf: imgURL!)
                     let imageProd = UIImage(data: picData)
-
+                    
                     DispatchQueue.main.async { // [self] in
                         cell.visualCartProductImage.image = imageProd
                     }
@@ -116,7 +177,7 @@ class VisuallyImpairedCartTableViewController: UIViewController, UITableViewData
         return cell
         // ****************************CLEAR CODE****************************************
     }
-
+    
     // ****************************CLEAR CODE****************************************
     // MARK: Delete
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -187,15 +248,15 @@ class VisuallyImpairedCartTableViewController: UIViewController, UITableViewData
                 )
                 // ==========================FOR TESTING==========================
                 let rowData = "[RegularCartTableViewController>loadCartProducts] This is cartProductDetails\n" +
-                    "cartProductID: \(cartProductID) \t\t" +
-                    "cartID: \(cartID) \t\t" +
-                    "productID: \(productID) \t\t" +
-                    "cartProductQty: \(cartProductQty) \t\t" +
-                    "productName: \(productName) \t\t" +
-                    "productPrice: \(productPrice) \t\t" +
-                    "productImage: \(productImage) \t\t\n" +
-                    "===================================================================="
-                    
+                "cartProductID: \(cartProductID) \t\t" +
+                "cartID: \(cartID) \t\t" +
+                "productID: \(productID) \t\t" +
+                "cartProductQty: \(cartProductQty) \t\t" +
+                "productName: \(productName) \t\t" +
+                "productPrice: \(productPrice) \t\t" +
+                "productImage: \(productImage) \t\t\n" +
+                "===================================================================="
+                
                 showData += rowData
                 
                 print(showData)
@@ -206,6 +267,16 @@ class VisuallyImpairedCartTableViewController: UIViewController, UITableViewData
         }
         
         visualCartTableView.reloadData()
+    }
+    
+    
+    //For paypal delegates
+    func reloadDropInData() {
+        print("Reload Drop-In data")
+    }
+    
+    func editPaymentMethods(_ sender: Any) {
+        print("Edit Drop-In data")
     }
     // ============================SQL LOAD SAVED PRODUCTS END===========================
     // ****************************CLEAR CODE****************************************

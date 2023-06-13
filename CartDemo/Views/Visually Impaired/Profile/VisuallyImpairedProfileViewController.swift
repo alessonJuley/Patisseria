@@ -62,6 +62,9 @@ class VisuallyImpairedProfileViewController: UIViewController {
         controller.modalPresentationStyle = .fullScreen
         controller.modalTransitionStyle = .coverVertical
         present(controller, animated: true, completion: nil)
+        
+        //Clear currentLoggedInUser
+        currentUserLoggedInID = 0
     }
     
 }
