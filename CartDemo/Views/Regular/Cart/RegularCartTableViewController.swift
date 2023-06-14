@@ -74,7 +74,18 @@ class RegularCartTableViewController: UIViewController, UITableViewDataSource, U
             //                self.navigationController?.present(vc, animated: true)
             //            }
             //
+            
         }
+        // 4012000033330026
+        // removes all the object
+//        cartProduct.removeAll()
+//        print(cartProduct.count)
+        
+      
+//        regularCartTableView.reloadData()
+//
+//        cartProductTotal.text = "$0.0"
+        
     }
     
     func paymentModal(clientTokenOrTokenizationKey: String) {
@@ -147,6 +158,7 @@ class RegularCartTableViewController: UIViewController, UITableViewDataSource, U
         }.resume()
         // removes all the object
         cartProduct.removeAll()
+        deleteItemFromDB()
         regularCartTableView.reloadData()
         cartProductTotal.text = "$0.0"
     }
@@ -299,4 +311,24 @@ class RegularCartTableViewController: UIViewController, UITableViewDataSource, U
         print("Edit Drop-In data")
     }
     
+}
+
+func deleteItemFromDB() {
+    let deleteCartProduct = sqlite3_exec(dbQueue, "DELETE FROM CartProduct", nil, nil, nil)
+
+    if(deleteCartProduct != SQLITE_OK){
+        print("[LoginViewController.swift>deleteCartProduct] Cannot delete CartProduct data 🙁")
+    }
+    else{
+        print("[LoginViewController.swift>deleteCartProduct] CartProduct data deleted 🥳")
+    }
+    
+    let updateCheckOutStatus = sqlite3_exec(dbQueue, "UPDATE Cart SET isCheckedOut = 'true'", nil, nil, nil)
+    
+    if(updateCheckOutStatus != SQLITE_OK){
+        print("[LoginViewController.swift>updateCheckOutStatus] Cannot update CartProduct checkout status 🙁")
+    }
+    else{
+        print("[LoginViewController.swift>updateCheckOutStatus] Updated CartProduct checkout status 🥳")
+    }
 }

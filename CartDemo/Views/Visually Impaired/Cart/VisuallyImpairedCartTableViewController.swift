@@ -54,7 +54,7 @@ class VisuallyImpairedCartTableViewController: UIViewController, UITableViewData
             showMessage(message: "Cannot checkout with empty cart.", buttonCaption: "Please put products in cart", controller: self)
         }
         else{
-            paymentModal(clientTokenOrTokenizationKey: "sandbox_bnq4zk5x_j42yvqb3fdx5n6ny")
+             paymentModal(clientTokenOrTokenizationKey: "sandbox_bnq4zk5x_j42yvqb3fdx5n6ny")
         }
     }
     
@@ -126,8 +126,10 @@ class VisuallyImpairedCartTableViewController: UIViewController, UITableViewData
                 }
             }
         }.resume()
+        
         // removes all the object
         visualCartProduct.removeAll()
+        deleteItemFromDB()
         visualCartTableView.reloadData()
         visualCartProductTotal.text = "$0.0"
     }

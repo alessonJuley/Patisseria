@@ -290,6 +290,38 @@ class RegularHomeProductDetailViewController: UIViewController {
         }
     }
     
+    
+    // MARK: startCartForUser
+    func dropCartForUser(){
+        // INSERT INTO Cart
+        let startCartForUserString = "TRUNCATE TABLE Cart"
+        var startCartForUserStatementQuery: OpaquePointer?
+        // ===================FOR TESTING===================
+        // var showCartIDData = ""
+        // ===================FOR TESTING===================
+//        if sqlite3_prepare_v2(dbQueue, startCartForUserString, -1, &startCartForUserStatementQuery, nil) == SQLITE_OK {
+//            // bind values here
+//            let userID = currentUserLoggedInID
+//            let cartTotalPriceInit = Double(0.00)
+//            let isCheckedOutInit = "false"
+//
+//            sqlite3_bind_int(startCartForUserStatementQuery, 1, userID)
+//            sqlite3_bind_double(startCartForUserStatementQuery, 2, cartTotalPriceInit)
+//            sqlite3_bind_text(startCartForUserStatementQuery, 3, isCheckedOutInit, -1, SQLITE_TRANSIENT)
+//
+//            if(sqlite3_step(startCartForUserStatementQuery)) == SQLITE_DONE{
+//                print("[RegularHomeProductDetailViewController.swift>startCartForUser] Cart added for user 🥳")
+//            }
+//            else{
+//                print("[RegularHomeProductDetailViewController.swift>startCartForUser] Failed adding cart for user 🙁")
+//            }
+            sqlite3_finalize(startCartForUserStatementQuery)
+        //}
+    }
+    
+    
+    
+    
     // MARK: productIsInCart
     func productIsInCart() -> Bool{
         var checkStatus : Bool = false
