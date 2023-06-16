@@ -57,14 +57,37 @@ class VisuallyImpairedProfileViewController: UIViewController {
 
     // MARK: Action
     @IBAction func visualLogoutButton(_ sender: UIButton) {
-        // maybe change the status of session here
-        let controller = storyboard?.instantiateViewController(withIdentifier: "LoginNC") as! UINavigationController
+        navigationMessage(msg: "Are you sure you want to log out?", viewController: self)
+    }
+}
+
+//function to navigate to home
+func navigationMessage(msg: String, viewController:UIViewController){
+
+    let alert = UIAlertController(title: "", message: msg , preferredStyle: .alert)
+    let action = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "LoginNC") as! UINavigationController
         controller.modalPresentationStyle = .fullScreen
         controller.modalTransitionStyle = .coverVertical
-        present(controller, animated: true, completion: nil)
-        
+        viewController.present(controller, animated: true, completion: nil)
+                
         //Clear currentLoggedInUser
         currentUserLoggedInID = 0
-    }
-    
+            //for validation
+        print("OK button tapped")
+       
+    })
+
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            
+            // For validation
+            print("Cancel button tapped")
+        }
+    //adding the buttons
+    alert.addAction(action)
+    alert.addAction(cancelAction)
+    //presenting the alert message
+    viewController.present(alert, animated: true, completion: nil)
 }

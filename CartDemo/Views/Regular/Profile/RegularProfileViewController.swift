@@ -58,13 +58,6 @@ class RegularProfileViewController: UIViewController {
     
     // MARK: Action
     @IBAction func regularProfileLogoutButton(_ sender: UIButton) {
-        // maybe change the status of session here
-        let controller = storyboard?.instantiateViewController(withIdentifier: "LoginNC") as! UINavigationController
-        controller.modalPresentationStyle = .fullScreen
-        controller.modalTransitionStyle = .coverVertical
-        present(controller, animated: true, completion: nil)
-        
-        //Clear currentLoggedInUser
-        currentUserLoggedInID = 0
+        navigationMessage(msg: "Are you sure you want to log out?", viewController: self)
     }
 }

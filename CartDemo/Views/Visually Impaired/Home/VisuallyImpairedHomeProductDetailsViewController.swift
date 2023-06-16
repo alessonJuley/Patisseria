@@ -130,6 +130,7 @@ class VisuallyImpairedHomeProductDetailsViewController: UIViewController {
 
                     if(sqlite3_step(insertCartProductStatementQuery)) == SQLITE_DONE{
                         print("[RegularHomeProductDetailViewController.swift>INSERT INTO CartProduct] CartProduct added 🥳")
+                        showMessage(message: "Product added to cart successfully!", buttonCaption: "OK", controller: self)
                     }
                     else{
                         print("[RegularHomeProductDetailViewController.swift>INSERT INTO CartProduct] Failed adding CartProduct 🙁")
@@ -171,6 +172,7 @@ class VisuallyImpairedHomeProductDetailsViewController: UIViewController {
                         
                         if(sqlite3_step(insertCartProductStatementQuery)) == SQLITE_DONE{
                             print("[RegularHomeProductDetailViewController.swift>INSERT INTO CartProduct && productIsInCart() == false] CartProduct added 🥳")
+                            showMessage(message: "Product added to cart successfully!", buttonCaption: "OK", controller: self)
                         }
                         else{
                             print("[RegularHomeProductDetailViewController.swift>INSERT INTO CartProduct && productIsInCart() == false] Failed adding CartProduct 🙁")
@@ -197,6 +199,7 @@ class VisuallyImpairedHomeProductDetailsViewController: UIViewController {
                         
                         if(sqlite3_step(updateCartProductStatementQuery)) == SQLITE_DONE{
                             print("[RegularHomeProductDetailViewController.swift>UPDATE CartProduct] CartProduct updated 🥳")
+                            showMessage(message: "Product added to cart successfully!", buttonCaption: "OK", controller: self)
                         }
                         else{
                             print("[RegularHomeProductDetailViewController.swift>UPDATE CartProduct] Failed updating CartProduct 🙁")
@@ -420,6 +423,7 @@ class VisuallyImpairedHomeProductDetailsViewController: UIViewController {
                     print("wishUserID: \(wishUserID) \n wishProductName: \(wishProductName)\n wishProductDescription:\(wishProductDescription)\n wishProductCategory:\(wishProductCategory)\n wishProductPrice: \(wishProductPrice)")
                     // ====================FOR TESTING====================
                     print("[RegularHomeProductDetailViewController.swift>addProductWishlistButton] Product added to wishlist 🥳")
+                    showMessage(message: "Product added to wishlist successfully!", buttonCaption: "OK", controller: self)
                 }
                 else{
                     print("[RegularHomeProductDetailViewController.swift>addProductWishlistButton] Product not added to wishlist 😔")
