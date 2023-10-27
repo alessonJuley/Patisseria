@@ -117,7 +117,10 @@ The limitations of this project includes the following:
 <h3>Add to Cart</h3>
 <img width="494" alt="Screen Shot 2023-09-12 at 7 27 43 PM" src="https://github.com/alessonJuley/Patisseria/assets/92022487/d98016ea-3fdc-4ec2-ab83-97ed04926f26">
 
-<h2>Developers notes: both regular and visually impaired modules will have the same paypal payment</h2>
+<br><br>
+> [!NOTE]
+> both regular and visually impaired modules will have the same paypal payment.
+
 <h3>Checkout</h3>
 <img width="398" alt="Screen Shot 2023-09-12 at 7 28 56 PM" src="https://github.com/alessonJuley/Patisseria/assets/92022487/689e098b-4ca4-4ad2-ae70-90acfe77637c">
 
