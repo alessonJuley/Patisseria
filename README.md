@@ -1,4 +1,4 @@
-# Patisseria – Order iOS Mobile Application Prototype for ABC Bakery
+# Patisseria: Order iOS Mobile Application Prototype for ABC Bakery
 
 <p align="justify">
 ABC Bakery, based on a real bakery shop located at Ormiston Mall, Auckland, New Zealand, is one of Auckland’s premier bakery providers. They specialise in region-specific curated bakery products and have a strong presence in the local Asian community.  Customers can order products physically at the shop or in WeChat. However, the current online ordering process is confusing and inefficient, as it directs customers through multiple pages between their website, WeChat, and another external site. The project will be developed using ​the <b>scrum methodology​</b>. 
@@ -6,7 +6,7 @@ ABC Bakery, based on a real bakery shop located at Ormiston Mall, Auckland, New 
 The mobile application prototype will have the necessary functionalities for a mobile order system by having multi-user features for admin and customers. It consists of a login and registration page, CRUD products, product information with filter and search features, wish list page, cart, and checkout. It also integrates a visual impairment component which adjusts the application’s layout for visually impaired young to older adults in Auckland, New Zealand. 
 </p>
 
-<h3>Aim and Objectives</h3>
+## Aim and Objectives
 <p align="justify">
 Our aim is to develop an iOS mobile application prototype for ABC Bakery to ensure a seamless ordering process. Our objective are as follows:
 <ul>
@@ -17,7 +17,7 @@ Our aim is to develop an iOS mobile application prototype for ABC Bakery to ensu
 </ul>
 </p>
 
-<h3>Scope and limitations</h3>
+## Scope and limitations
 The scope of this project includes the following:
 <ul>
   <li>Cater to Apple users in Auckland, New Zealand.</li>
@@ -35,7 +35,20 @@ The limitations of this project includes the following:
   <li>the project will not include reports of transactions, history of purchases from the customer, sales, advertisements, product stocks, and delivery. </li>
 </ul>
 
-<h3>Testing credentials</h3>
+## Getting Started
+
+To explore this project, follow these simple steps:
+
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/alessonJuley/Patisseria.git
+2. Open
+   ```bash
+   CartDemo.xcworkspace
+3. Build and run app.
+
+
+## Testing credentials
 <p>
   Please use the following login credentials as a reference when testing. 
 </p>
@@ -85,7 +98,7 @@ The limitations of this project includes the following:
   </tr>
 </table>
 
-<h1>Screenshots</h1>
+## Screenshots
 <h3>Onboarding page for all users</h3>
 <img width="668" alt="Screen Shot 2023-09-12 at 7 20 01 PM" src="https://github.com/alessonJuley/Patisseria/assets/92022487/53a46cc9-1980-400a-9ed5-dd7148eaa70a">
 
