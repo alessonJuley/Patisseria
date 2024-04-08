@@ -157,7 +157,7 @@ To explore this project, follow these simple steps:
 <img width="233" alt="Screen Shot 2023-09-12 at 7 33 36 PM" src="https://github.com/alessonJuley/Patisseria/assets/92022487/06c1a9ff-65ab-4318-9dcc-a885e70af37a">
 
 
-<h1>Developers</h1>
+<h1>Authors</h1>
 <h3>Alesson Abao</h3>
 Graduate Diploma in Software and Web Development (Level 7)<br>
 Manukau Institute of Technology - Manukau Campus <br>
